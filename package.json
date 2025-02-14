@@ -9,14 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "add": "^2.0.6",
+    "button": "^1.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "init": "^0.1.2",
     "lucide-react": "^0.475.0",
-    "motion": "^12.4.2",
+    "motion": "^12.4.3",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "shadcn": "^2.3.0",
     "shadcn-ui": "^0.9.4",
     "tailwind-merge": "^3.0.1"
   },
