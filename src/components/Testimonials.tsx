@@ -1,55 +1,100 @@
-// components/Testimonials.tsx
 "use client";
+import { CardStack } from "@/src/components/ui/card-stack";
+import { cn } from "@/src/lib/utils";
 
-import React from "react";
-import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
-
-const testimonials = [
-  {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
-  },
-  {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote:
-      "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
-  },
-  {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
-  },
-  {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
-  },
-];
-
-export default function Testimonials() {
+export function CardStackDemo() {
   return (
-    <section className="py-16 bg-[#f4d676] text-center">
-      <h2 className="text-3xl font-bold mb-8 text-[#515353]">
+    <div className="h-[40rem] bg-[#1f1f1f] flex flex-col items-center justify-center w-full">
+      <h2 className="p-10 mb-12 text-3xl font-bold text-[#f4d676]">
         Depoimentos
       </h2>
-      <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-        <InfiniteMovingCards
-          items={testimonials}
-          direction="right"
-          speed="slow"
-        />
-      </div>
-    </section>
+      <CardStack items={CARDS} />
+    
+    </div>
   );
 }
+
+// Small utility to highlight the content of specific section of a testimonial content
+export const Highlight = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <span
+      className={cn(
+        "font-bold bg-[#2e3e41] text-[#5ab8f7] dark:bg-emerald-700/[0.2] dark:text-emerald-500 px-1 py-0.5",
+        className
+      )}
+    >
+      {children}
+    </span>
+  );
+};
+
+const CARDS = [
+  {
+    id: 1,
+    name: "Daniel Manzoni",
+    designation: "Client",
+    content: (
+      <p>
+        Super <Highlight>travail de qualité et de précision</Highlight>. 
+        Équipe <Highlight>sérieuse et très sympathique</Highlight>, à l’écoute du client. 
+        Résultats <Highlight>très satisfaisants et conformes à mes attentes</Highlight>. 
+        <Highlight>Je recommande</Highlight>.
+        <br />
+        <span className="text-xs text-gray-400">
+          Visitado en février - une semaine atrás
+        </span>
+      </p>
+    ),
+  },
+  {
+    id: 2,
+    name: "Olivier Chabaud",
+    designation: "Client",
+    content: (
+      <p>
+        <Highlight>Super travail sur 2 portières</Highlight> 🤩🤩 – un travail de{" "}
+        <Highlight>très grande qualité</Highlight> et en plus,{" "}
+        <Highlight>Bruno est très sympa</Highlight>. Bref,{" "}
+        <Highlight>un client heureux, donc un client qui recommande</Highlight> !!
+        <br />
+        <span className="text-xs text-gray-400">
+          Visitado em fevereiro, 6 dias atrás
+        </span>
+      </p>
+    ),
+  },
+  {
+    id: 3,
+    name: "Suzze",
+    designation: "Client",
+    content: (
+      <p>
+        <Highlight>Équipe au top</Highlight> – travail soigné et professionnel, je recommande. 👍🏻
+        <br />
+        <span className="text-xs text-gray-400">
+          Visitado em janeiro, 4 semanas atrás
+        </span>
+      </p>
+    ),
+  },
+  {
+    id: 4,
+    name: "Jimmy Rolly",
+    designation: "Client",
+    content: (
+      <p>
+        <Highlight>Très professionnel</Highlight>, le travail est bien fait avec une finition parfaite! Merci à vous.
+        <br />
+        <span className="text-xs text-gray-400">
+          Visitado em fevereiro, 2 dias atrás
+        </span>
+      </p>
+    ),
+  }
+];

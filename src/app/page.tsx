@@ -2,8 +2,8 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Benefits from "../components/Benefits";
-import BeforeAfterSection from "../components/BeforeAfterSection";
-import Testimonials from "../components/Testimonials";
+import { CompareDemo } from "../components/CompareDemo";
+import {CardStackDemo} from "../components/Testimonials";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
@@ -14,11 +14,12 @@ export default function HomePage() {
       <main>
         <Hero />
         <Benefits />
-        <BeforeAfterSection/>
-        <Testimonials />
+        <CompareDemo/>
+        <CardStackDemo />
         <ContactForm />
       </main>
       <Footer />
+      
     </>
   );
 }
