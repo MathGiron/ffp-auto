@@ -1,11 +1,13 @@
 // app/page.tsx
+
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Benefits from "../components/Benefits";
 import { CompareDemo } from "../components/CompareDemo";
 import {CardStackDemo} from "../components/Testimonials";
-import ContactForm from "../components/ContactForm";
+import {ContactMechanicForm} from "../components/ContactForm";
 import Footer from "../components/Footer";
+import Location from "../components/Location"
 
 export default function HomePage() {
   return (
@@ -16,7 +18,8 @@ export default function HomePage() {
         <Benefits />
         <CompareDemo/>
         <CardStackDemo />
-        <ContactForm />
+        <Location/>
+        <ContactMechanicForm />
       </main>
       <Footer />
       

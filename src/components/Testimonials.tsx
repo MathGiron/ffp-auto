@@ -4,7 +4,7 @@ import { cn } from "@/src/lib/utils";
 
 export function CardStackDemo() {
   return (
-    <div className="h-[40rem] bg-[#1f1f1f] flex flex-col items-center justify-center w-full">
+    <div className="h-[30rem] bg-[#1f1f1f] flex flex-col items-center justify-center w-full">
       <h2 className="p-10 mb-12 text-3xl font-bold text-[#f4d676]">
         Depoimentos
       </h2>
