@@ -19,18 +19,18 @@ export default function Hero() {
         className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0 flex flex-col gap-4 items-center justify-center text-center"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#f4d676] to-[#af7837] bg-clip-text text-transparent">
-          Bruno Auto: Excelência em Martelinho de Ouro
+        Bruno Auto : Excellence en Martelinho de Ouro
         </h1>
         <p className="mb-6 text-lg max-w-xl mx-auto text-neutral-300">
-          Tecnologia e tradição se unem para preservar a beleza original do seu veículo.
-          Confie na precisão e qualidade que só a Bruno Auto oferece.
+        La technologie et la tradition s’unissent pour préserver la beauté originale de votre véhicule.
+        Faites confiance à la précision et à la qualité que seule Bruno Auto peut vous offrir.
         </p>
         <button className="relative p-[3px]">
           {/* Gradiente externo */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#f4d676] to-[#af7837] rounded-lg" />
           {/* Botão interno */}
           <div className="relative px-8 py-2 bg-[#1f1f1f] rounded-[6px] group transition duration-200 text-white hover:text-black hover:bg-transparent">
-            FAÇA UM ORÇAMENTO
+          DEMANDEZ UN DEVIS
           </div>
         </button>
       </motion.div>

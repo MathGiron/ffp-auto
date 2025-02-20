@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useToast } from "@/hooks/use-toast"; // Certifique-se do caminho correto
+import { useToast } from "@/hooks/use-toast"; // Ajuste o caminho conforme seu projeto
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,64 +44,59 @@ export default function Header() {
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
       <div className="container mx-auto px-10 h-12 flex justify-between items-center">
-        <Image 
-          src="/Frame33.png" 
-          alt="Logo Bruno Auto" 
-          width={200} 
-          height={50} 
+        {/* Logo */}
+        <Image
+          src="/Frame33.png"
+          alt="Logo Bruno Auto"
+          width={200}
+          height={50}
           className="object-contain"
         />
-        <nav>
+
+        {/* Links (somente desktop) */}
+        <nav className="hidden md:block">
           <ul className="flex space-x-6 items-center">
             <li>
-              <Link 
-                href="#features" 
+              <Link
+                href="#diferenciais"
+                scroll={true}
                 className="text-white transition-colors hover:bg-gradient-to-r hover:from-[#f4d676] hover:to-[#af7837] hover:bg-clip-text hover:text-transparent"
               >
-                Diferenciais
+                Témoignages
               </Link>
             </li>
             <li>
-              <Link 
-                href="#pricing" 
+              <Link
+                href="#before-and-after"
+                scroll={true}
                 className="text-white transition-colors hover:bg-gradient-to-r hover:from-[#f4d676] hover:to-[#af7837] hover:bg-clip-text hover:text-transparent"
               >
-                Depoimentos
+                Avant et Après
+
               </Link>
             </li>
             <li>
-              <Link 
-                href="#about" 
+              <Link
+                href="#whoweare"
+                scroll={true}
                 className="text-white transition-colors hover:bg-gradient-to-r hover:from-[#f4d676] hover:to-[#af7837] hover:bg-clip-text hover:text-transparent"
               >
-                Localização
+                Qui sommes-nous
               </Link>
-            </li>
-            <li>
-              <button
-                onClick={handleCopyContact}
-                className="flex items-center text-white hover:text-gray-300 transition-colors"
-              >
-                {/* Ícone de telefone */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 5a2 2 0 012-2h3.28a2 2 0 011.79 1.11l1.14 2.28a2 2 0 01-.45 2.11L8.14 9.86a11.042 11.042 0 005 5l1.21-1.21a2 2 0 012.11-.45l2.28 1.14A2 2 0 0121 15.72V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z"
-                  />
-                </svg>
-                {contactNumber}
-              </button>
             </li>
           </ul>
         </nav>
+
+        {/* Botão (visível em qualquer tamanho) */}
+        <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 ml-4">
+          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#af7837_50%,#f4d676_100%)]" />
+          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center 
+                  rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white hover:bg-gradient-to-r from-[#f4d676] to-[#af7837] hover:text-black
+                  backdrop-blur-3xl"
+                >
+                  DEMANDEZ UN DEVIS
+                </span>
+        </button>
       </div>
     </motion.header>
   );

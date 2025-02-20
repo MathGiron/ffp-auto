@@ -7,7 +7,7 @@ import { CompareDemo } from "../components/CompareDemo";
 import {CardStackDemo} from "../components/Testimonials";
 import {ContactMechanicForm} from "../components/ContactForm";
 import Footer from "../components/Footer";
-import Location from "../components/Location"
+import AnimatedTestimonialsDemo from "../components/Location"
 
 export default function HomePage() {
   return (
@@ -18,7 +18,7 @@ export default function HomePage() {
         <Benefits />
         <CompareDemo/>
         <CardStackDemo />
-        <Location/>
+        <AnimatedTestimonialsDemo/>
         <ContactMechanicForm />
       </main>
       <Footer />

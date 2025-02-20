@@ -6,7 +6,7 @@ export function CardStackDemo() {
   return (
     <div className="h-[30rem] bg-[#1f1f1f] flex flex-col items-center justify-center w-full">
       <h2 className="p-10 mb-12 text-3xl font-bold text-[#f4d676]">
-        Depoimentos
+      Témoignages
       </h2>
       <CardStack items={CARDS} />
     
@@ -64,7 +64,7 @@ const CARDS = [
         <Highlight>un client heureux, donc un client qui recommande</Highlight> !!
         <br />
         <span className="text-xs text-gray-400">
-          Visitado em fevereiro, 6 dias atrás
+        Visité en février, il y a 6 jours
         </span>
       </p>
     ),
@@ -78,7 +78,7 @@ const CARDS = [
         <Highlight>Équipe au top</Highlight> – travail soigné et professionnel, je recommande. 👍🏻
         <br />
         <span className="text-xs text-gray-400">
-          Visitado em janeiro, 4 semanas atrás
+        Visité en janvier, il y a 4 semaines
         </span>
       </p>
     ),
@@ -92,7 +92,7 @@ const CARDS = [
         <Highlight>Très professionnel</Highlight>, le travail est bien fait avec une finition parfaite! Merci à vous.
         <br />
         <span className="text-xs text-gray-400">
-          Visitado em fevereiro, 2 dias atrás
+        Visité en février, il y a 2 jours
         </span>
       </p>
     ),
