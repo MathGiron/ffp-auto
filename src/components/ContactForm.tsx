@@ -1,15 +1,39 @@
 "use client";
 
-import React from "react";
+import React, { FormEvent } from "react";
 import { Label } from "@/src/components/ui/label";
 import { Input } from "@/src/components/ui/input";
 import { cn } from "@/src/lib/utils";
 
 export function ContactMechanicForm() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Lógica de envio do formulário (ex.: chamar uma API, enviar email, etc.)
-    console.log("Form submitted");
+    // 1) Capturar os valores de cada campo
+    const form = e.currentTarget;
+
+    const firstname = (form.querySelector("#firstname") as HTMLInputElement)?.value;
+    const lastname = (form.querySelector("#lastname") as HTMLInputElement)?.value;
+    const phone = (form.querySelector("#phone") as HTMLInputElement)?.value;
+    const email = (form.querySelector("#email") as HTMLInputElement)?.value;
+    const description = (form.querySelector("#description") as HTMLTextAreaElement)?.value;
+
+    // 2) Montar o texto a ser enviado
+    const message = `Olá, aqui estão os detalhes do formulário:
+
+• Nom: ${firstname}
+• Prénom: ${lastname}
+• Téléphone: ${phone}
+• Email: ${email}
+• Problème: ${description}
+`;
+
+    // 3) Codificar e redirecionar para o link do WhatsApp (ou abrir em nova aba)
+    const encodedMessage = encodeURIComponent(message.trim());
+    // Exemplo usando seu link com `?text=...`
+    const whatsAppLink = `https://wa.me/message/Z2OSV4FHUEMUN1?text=${encodedMessage}`;
+
+    // Abrir em nova aba (opcional) ou no mesmo
+    window.open(whatsAppLink, "_blank");
   };
 
   return (
@@ -23,11 +47,9 @@ export function ContactMechanicForm() {
           border border-[#f4d676]
         "
       >
-        <h2 className="font-bold text-xl text-[#f4d676]">
-        Demandez votre devis
-        </h2>
+        <h2 className="font-bold text-xl text-[#f4d676]">Demandez votre devis</h2>
         <p className="text-white text-sm max-w-sm mt-2">
-        Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
+          Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
         </p>
 
         <form className="my-8 text-left" onSubmit={handleSubmit}>
@@ -35,24 +57,24 @@ export function ContactMechanicForm() {
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
               <Label htmlFor="firstname" className="text-[#f4d676]">
-                Nome
+                Nom
               </Label>
-              <Input id="firstname" placeholder="Ex: João" type="text" />
+              <Input id="firstname" placeholder="Ex: John" type="text" />
             </LabelInputContainer>
             <LabelInputContainer>
               <Label htmlFor="lastname" className="text-[#f4d676]">
-                Sobrenome
+                Prénom
               </Label>
-              <Input id="lastname" placeholder="Ex: Silva" type="text" />
+              <Input id="lastname" placeholder="Ex: Smith" type="text" />
             </LabelInputContainer>
           </div>
 
           {/* Telefone */}
           <LabelInputContainer className="mb-4">
             <Label htmlFor="phone" className="text-[#f4d676]">
-              Telefone
+              Téléphone
             </Label>
-            <Input id="phone" placeholder="(xx) xxxxx-xxxx" type="tel" />
+            <Input id="phone" placeholder="(xx) x xx xx xx xx" type="tel" />
           </LabelInputContainer>
 
           {/* Email */}
@@ -60,17 +82,17 @@ export function ContactMechanicForm() {
             <Label htmlFor="email" className="text-[#f4d676]">
               Email
             </Label>
-            <Input id="email" placeholder="exemplo@dominio.com" type="email" />
+            <Input id="email" placeholder="exemple@domaine.com" type="email" />
           </LabelInputContainer>
 
           {/* Descrição do Problema */}
           <LabelInputContainer className="mb-4">
             <Label htmlFor="description" className="text-[#f4d676]">
-              Descreva o problema
+              Décrivez le problème
             </Label>
             <textarea
               id="description"
-              placeholder="Ex: Riscos na porta, amassado no para-lama..."
+              placeholder="Ex: Rayures sur la porte, bosse sur l’aile..."
               rows={4}
               className="
                 border
@@ -79,7 +101,7 @@ export function ContactMechanicForm() {
                 p-2
                 w-full
                 bg-transparent
-                text-white
+                text-black
                 placeholder:text-neutral-400
                 focus:outline-none
                 focus:ring-1
@@ -105,7 +127,6 @@ export function ContactMechanicForm() {
   );
 }
 
-/* Contêiner para campo + label */
 const LabelInputContainer = ({
   children,
   className,

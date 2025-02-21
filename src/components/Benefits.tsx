@@ -9,19 +9,19 @@ export default function Benefits() {
     {
       title: "Précision",
       description:
-        "Reparos milimétricos que restauram a Réparations millimétriques qui redonnent à votre véhicule toute sa beauté d’origine. Faites confiance à Bruno Auto pour des résultats impressionnants. original do seu veículo. Confie na Bruno Auto para resultados que impressionam.",
+        "Réparations millimétriques qui redonnent à votre véhicule toute sa beauté d’origine. Faites confiance à Bruno Auto pour des résultats impressionnants.",
       buttonText: "Saiba Mais",
     },
     {
       title: "Qualité",
       description:
-        "Uso de tecnologia avançada e materiais premium para um acL’utilisation d’une technologie de pointe et de matériaux haut de gamme assure une finition supérieure. Découvrez l’excellence qui valorise votre véhicule.abamento superior.",
+        "L’utilisation d’une technologie de pointe et de matériaux haut de gamme assure une finition supérieure. Découvrez l’excellence qui valorise votre véhicule.",
       buttonText: "Saiba Mais",
     },
     {
       title: "Fiabilité",
       description:
-        "Serviços transparentes e seguros, Des services transparents et sécurisés, vous garantissant une confiance totale. Choisissez Bruno Auto pour prendre soin de votre investissement. sua total confiança. Escolha Bruno Auto para cuidar do seu investimento.",
+        "Des services transparents et sécurisés, vous garantissant une confiance totale. Choisissez Bruno Auto pour prendre soin de votre investissement.",
       buttonText: "Saiba Mais",
     },
   ];
@@ -32,7 +32,7 @@ export default function Benefits() {
       className="relative overflow-hidden py-20 bg-[#1F1F1F] text-center"
     >
       <h2 className="mb-12 text-3xl font-bold text-[#f4d676]">
-        Nossos Diferenciais
+      Témoignages
       </h2>
 
       {/* 

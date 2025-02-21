@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       rel: "icon",
       type: "image/png",
       sizes: "128x128",
-      url: "/Frame 55.png",
+      url: "/Frame 55 1.png",
     },
   ],
   description: "Excelência em reparos automotivos – Martelinho de Ouro com precisão e qualidade.",
