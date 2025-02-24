@@ -1,0 +1,6 @@
+[build]
+  command = "pnpm run build"   # ou "npm run build", dependendo do gerenciador que você usa
+  publish = ".next"            # Para projetos Next.js com SSR; se for exportação estática, use "out"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
