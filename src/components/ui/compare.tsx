@@ -111,7 +111,8 @@ export const Compare = ({
     [handleMove]
   );
   const handleTouchStart = useCallback(
-    (_: React.TouchEvent) => {
+    (e: React.TouchEvent) => {
+      void e; // "Usa" o parâmetro para evitar o aviso de variável não utilizada
       if (!autoplay) {
         handleStart();
       }
