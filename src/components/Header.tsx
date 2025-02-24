@@ -4,22 +4,17 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useToast } from "@/hooks/use-toast"; // Ajuste o caminho conforme seu projeto
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const { toast } = useToast();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleWhatsApp = () => {
-    // Redireciona para o link do WhatsApp em nova aba
     window.open("https://wa.me/message/Z2OSV4FHUEMUN1", "_blank");
   };
 

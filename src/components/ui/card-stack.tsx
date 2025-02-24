@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-let interval: any;
+let interval: ReturnType<typeof setInterval>;
 
 type Card = {
   id: number;
@@ -43,11 +43,8 @@ export const CardStack = ({
     <div
       className="
         relative
-        // Mobile (padrão) => 72 de altura e 300px de largura
         h-72 w-[300px]
-        // Tela pequena (sm:)
         sm:h-80 sm:w-[350px]
-        // Tela média (md:)
         md:h-60 md:w-[700px]
       "
     >
@@ -58,7 +55,6 @@ export const CardStack = ({
             absolute dark:bg-black bg-[#292929] rounded-3xl p-4 shadow-xl
             border border-[#f3d576] dark:border-white/[0.1] shadow-black/[0.1] dark:shadow-white/[0.05]
             flex flex-col justify-between
-            // Responsivo igual ao container
             h-72 w-[300px]
             sm:h-80 sm:w-[350px]
             md:h-60 md:w-[700px]

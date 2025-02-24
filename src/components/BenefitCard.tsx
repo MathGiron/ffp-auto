@@ -1,4 +1,3 @@
-// components/BenefitCard.tsx
 "use client";
 
 import React from "react";
@@ -7,16 +6,14 @@ import { Meteors } from "../components/ui/meteors";
 export interface MeteorsDemoProps {
   title: string;
   description: string;
-  buttonText: string;
 }
 
 export function MeteorsDemo({
   title,
   description,
-  buttonText,
 }: MeteorsDemoProps) {
   return (
-    <div className="">
+    <div>
       <div className="w-full relative max-w-xs">
         {/* Gradiente de fundo com z-index baixo */}
         <div className="absolute inset-0 z-0 h-full w-full bg-gradient-to-r from-[#f4d676] to-[#af7837] transform scale-[0.80] rounded-full blur-3xl" />
@@ -44,9 +41,7 @@ export function MeteorsDemo({
                 />
               </svg>
             </div>
-            <h1 className="font-bold text-3xl text-white ml-2">
-              {title}
-            </h1>
+            <h1 className="font-bold text-3xl text-white ml-2">{title}</h1>
           </div>
           {/* Descrição centralizada verticalmente (z-10) */}
           <div className="relative inset-x-0 top-1/2 transform -translate-y-1/2 z-10 text-center">
