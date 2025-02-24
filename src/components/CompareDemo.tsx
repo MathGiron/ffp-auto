@@ -4,6 +4,8 @@
 import React from "react";
 import { Compare } from "@/src/components/ui/compare";
 
+
+
 export function CompareDemo() {
   return (
     <section id="before-and-after">

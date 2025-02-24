@@ -103,10 +103,8 @@ export const Compare = ({
   );
 
   // Removemos o uso de e.clientX em funções que não precisam do valor
-  const handleMouseDown = useCallback(
-    (e: React.MouseEvent) => handleStart(),
-    [handleStart]
-  );
+  const handleMouseDown = useCallback(() => handleStart(), [handleStart]);
+
   const handleMouseUp = useCallback(() => handleEnd(), [handleEnd]);
   const handleMouseMove = useCallback(
     (e: React.MouseEvent) => handleMove(e.clientX),
