@@ -13,7 +13,7 @@ export function CompareDemo() {
       <h2 className="mb-12 text-3xl font-bold text-[#f4d676]">
       Avant et Après
       </h2>
-      <div className="flex gap-10">
+      <div className="flex gap-10 mb:gap-5">
       <Compare
         firstImage="/before.jpg"
         secondImage="/after.jpg"
