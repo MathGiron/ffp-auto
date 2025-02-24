@@ -5,8 +5,8 @@ import Hero from "../components/Hero";
 import Benefits from "../components/Benefits";
 import { CompareDemo } from "../components/CompareDemo";
 import {CardStackDemo} from "../components/Testimonials";
-import {ContactMechanicForm} from "../components/ContactForm";
 import Footer from "../components/Footer";
+import {ContactMechanicButton} from "../components/Contact"
 import AnimatedTestimonialsDemo from "../components/Location"
 
 export default function HomePage() {
@@ -19,7 +19,8 @@ export default function HomePage() {
         <CompareDemo/>
         <CardStackDemo />
         <AnimatedTestimonialsDemo/>
-        <ContactMechanicForm />
+        <ContactMechanicButton/>
+        
       </main>
       <Footer />
       

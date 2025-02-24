@@ -5,6 +5,12 @@ import { motion } from "framer-motion";
 import { Spotlight } from "@/src/components/ui/spotlight-new";
 
 export default function Hero() {
+
+  const handleWhatsApp = () => {
+    // Redireciona para o link do WhatsApp em nova aba
+    window.open("https://wa.me/message/Z2OSV4FHUEMUN1", "_blank");
+  };
+
   return (
     // Container principal inspirado no SpotlightNewDemo
     <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
@@ -25,11 +31,13 @@ export default function Hero() {
         La technologie et la tradition s’unissent pour préserver la beauté originale de votre véhicule.
         Faites confiance à la précision et à la qualité que seule Bruno Auto peut vous offrir.
         </p>
-        <button className="relative p-[3px]">
+        <button onClick={handleWhatsApp} className="relative p-[3px]">
+          
           {/* Gradiente externo */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#f4d676] to-[#af7837] rounded-lg" />
           {/* Botão interno */}
           <div className="relative px-8 py-2 bg-[#1f1f1f] rounded-[6px] group transition duration-200 text-white hover:text-black hover:bg-transparent">
+            
           DEMANDEZ UN DEVIS
           </div>
         </button>

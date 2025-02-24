@@ -18,23 +18,9 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const contactNumber = "+33 6 88 59 3845";
-
-  const handleCopyContact = async () => {
-    try {
-      await navigator.clipboard.writeText(contactNumber);
-      toast({
-        title: "Contato Copiado",
-        description: `Número copiado: ${contactNumber}`,
-      });
-    } catch (error) {
-      console.error("Erro ao copiar número:", error);
-      toast({
-        title: "Erro",
-        description: "Falha ao copiar o número de contato.",
-        variant: "destructive",
-      });
-    }
+  const handleWhatsApp = () => {
+    // Redireciona para o link do WhatsApp em nova aba
+    window.open("https://wa.me/message/Z2OSV4FHUEMUN1", "_blank");
   };
 
   return (
@@ -72,7 +58,6 @@ export default function Header() {
                 className="text-white transition-colors hover:bg-gradient-to-r hover:from-[#f4d676] hover:to-[#af7837] hover:bg-clip-text hover:text-transparent"
               >
                 Avant et Après
-
               </Link>
             </li>
             <li>
@@ -87,15 +72,15 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Botão (visível em qualquer tamanho) */}
-        <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 ml-4">
+        {/* Botão WhatsApp (visível em qualquer tamanho) */}
+        <button
+          onClick={handleWhatsApp}
+          className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 ml-4"
+        >
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#af7837_50%,#f4d676_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center 
-                  rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white hover:bg-gradient-to-r from-[#f4d676] to-[#af7837] hover:text-black
-                  backdrop-blur-3xl"
-                >
-                  DEMANDEZ UN DEVIS
-                </span>
+          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl hover:bg-gradient-to-r from-[#f4d676] to-[#af7837] hover:text-black">
+            DEMANDEZ UN DEVIS
+          </span>
         </button>
       </div>
     </motion.header>

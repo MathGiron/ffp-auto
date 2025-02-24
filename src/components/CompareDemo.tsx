@@ -6,7 +6,7 @@ import { Compare } from "@/src/components/ui/compare";
 
 export function CompareDemo() {
   return (
-    <section>
+    <section id="before-and-after">
     <div className="flex flex-col justify-center items-center p-4 dark:bg-neutral-900 bg-[#161616] border-neutral-200 dark:border-neutral-800 px-4">
       <h2 className="mb-12 text-3xl font-bold text-[#f4d676]">
       Avant et Après
