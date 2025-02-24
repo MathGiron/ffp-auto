@@ -34,7 +34,7 @@ export const Compare = ({
   const [isDragging, setIsDragging] = useState(false);
 
   const sliderRef = useRef<HTMLDivElement>(null);
-  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startAutoplay = useCallback(() => {
     if (!autoplay) return;
@@ -102,6 +102,7 @@ export const Compare = ({
     [slideMode, isDragging]
   );
 
+  // Removemos o uso de e.clientX em funções que não precisam do valor
   const handleMouseDown = useCallback(
     (e: React.MouseEvent) => handleStart(),
     [handleStart]
@@ -111,7 +112,6 @@ export const Compare = ({
     (e: React.MouseEvent) => handleMove(e.clientX),
     [handleMove]
   );
-
   const handleTouchStart = useCallback(
     (e: React.TouchEvent) => {
       if (!autoplay) {
@@ -120,13 +120,11 @@ export const Compare = ({
     },
     [handleStart, autoplay]
   );
-
   const handleTouchEnd = useCallback(() => {
     if (!autoplay) {
       handleEnd();
     }
   }, [handleEnd, autoplay]);
-
   const handleTouchMove = useCallback(
     (e: React.TouchEvent) => {
       if (!autoplay) {
@@ -166,6 +164,9 @@ export const Compare = ({
           <div className="w-36 h-full [mask-image:radial-gradient(100px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-[#af7837] via-transparent to-transparent z-20 opacity-50" />
           <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-[#f4d676] via-transparent to-transparent z-10 opacity-100" />
           <div className="w-10 h-3/4 top-1/2 -translate-y-1/2 absolute -right-10 [mask-image:radial-gradient(100px_at_left,white,transparent)]">
+            {/* Se persistir o aviso para MemoizedSparklesCore, desative a regra para esta linha */}
+            {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
+            {/** Usamos o componente memoizado */}
             <MemoizedSparklesCore
               background="transparent"
               minSize={0.4}
