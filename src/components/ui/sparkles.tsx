@@ -273,4 +273,4 @@ export const SparklesCore = (props: ParticlesProps) => {
   );
 };
 
-const MemoizedSparklesCore = React.memo(SparklesCore);
+

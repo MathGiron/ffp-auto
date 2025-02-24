@@ -111,7 +111,7 @@ export const Compare = ({
     [handleMove]
   );
   const handleTouchStart = useCallback(
-    (e: React.TouchEvent) => {
+    (_: React.TouchEvent) => {
       if (!autoplay) {
         handleStart();
       }
