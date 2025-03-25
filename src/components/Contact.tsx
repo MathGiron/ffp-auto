@@ -2,6 +2,12 @@
 
 import React from "react";
 
+const copyPhoneNumber = () => {
+  navigator.clipboard.writeText("+33688593845");
+  alert("Número copiado para a área de transferência!");
+};
+
+
 export function ContactMechanicButton() {
   const handleOrcamento = () => {
     const whatsAppLink = "https://wa.me/message/Z2OSV4FHUEMUN1";
@@ -22,6 +28,15 @@ export function ContactMechanicButton() {
         aspect neuf à votre véhicule.
       </p>
 
+      {/* Número de telefone com função de copiar */}
+      <span
+            onClick={copyPhoneNumber}
+            className="text-white cursor-pointer text-xl transition-colors p-4 hover:bg-gradient-to-r hover:from-[#f4d676] hover:to-[#af7837] hover:bg-clip-text hover:text-transparent"
+          >
+            +33 6 88 59 3845
+          </span>
+      
+
       {/* Botão grande */}
       <button
         onClick={handleOrcamento}
@@ -32,7 +47,7 @@ export function ContactMechanicButton() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#f4d676] to-[#af7837] rounded-lg" />
         {/* Botão interno */}
         <div className="relative px-10 py-4 bg-[#1f1f1f] rounded-[6px] group transition duration-200 text-white text-lg font-semibold hover:text-black hover:bg-transparent">
-        DEMANDEZ UN DEVIS
+        C’EST GRATUIT
         </div>
       </button>
     </section>

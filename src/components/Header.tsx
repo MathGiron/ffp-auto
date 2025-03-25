@@ -18,6 +18,11 @@ export default function Header() {
     window.open("https://wa.me/message/Z2OSV4FHUEMUN1", "_blank");
   };
 
+  const copyPhoneNumber = () => {
+    navigator.clipboard.writeText("+33688593845");
+    alert("Número copiado para a área de transferência!");
+  };
+
   return (
     <motion.header
       className="fixed top-0 w-full z-50 py-4"
@@ -67,16 +72,26 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Botão WhatsApp (visível em qualquer tamanho) */}
-        <button
-          onClick={handleWhatsApp}
-          className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 ml-4"
-        >
-          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#af7837_50%,#f4d676_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl hover:bg-gradient-to-r from-[#f4d676] to-[#af7837] hover:text-black">
-            DEMANDEZ UN DEVIS
+        {/* Container para botão WhatsApp e número */}
+        <div className="flex items-center space-x-4">
+          {/* Número de telefone com função de copiar */}
+          <span
+            onClick={copyPhoneNumber}
+            className="text-white cursor-pointer transition-colors hover:bg-gradient-to-r hover:from-[#f4d676] hover:to-[#af7837] hover:bg-clip-text hover:text-transparent"
+          >
+            +33 6 88 59 3845
           </span>
-        </button>
+          {/* Botão WhatsApp */}
+          <button
+            onClick={handleWhatsApp}
+            className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+          >
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#af7837_50%,#f4d676_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl hover:bg-gradient-to-r from-[#f4d676] to-[#af7837] hover:text-black">
+              C’EST GRATUIT
+            </span>
+          </button>
+        </div>
       </div>
     </motion.header>
   );

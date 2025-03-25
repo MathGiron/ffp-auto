@@ -25,11 +25,13 @@ export default function Hero() {
         className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0 flex flex-col gap-4 items-center justify-center text-center"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#f4d676] to-[#af7837] bg-clip-text text-transparent">
-        Bruno Auto : Excellence en Martelinho de Ouro
+        Bruno Auto : Excellence en Débosselage sans Peinture
         </h1>
         <p className="mb-6 text-lg max-w-xl mx-auto text-neutral-300">
         La technologie et la tradition s’unissent pour préserver la beauté originale de votre véhicule.
         Faites confiance à la précision et à la qualité que seule Bruno Auto peut vous offrir.
+
+        Ne perdez pas de temps à immobiliser votre véhicule en carrosserie, nous intervenons sur place dans votre lieu de travail ou domicile. Nos services sont 3 x plus économique, rapide et écologique.
         </p>
         <button onClick={handleWhatsApp} className="relative p-[3px]">
           
@@ -38,7 +40,7 @@ export default function Hero() {
           {/* Botão interno */}
           <div className="relative px-8 py-2 bg-[#1f1f1f] rounded-[6px] group transition duration-200 text-white hover:text-black hover:bg-transparent">
             
-          DEMANDEZ UN DEVIS
+          C’EST GRATUIT
           </div>
         </button>
       </motion.div>
