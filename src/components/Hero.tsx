@@ -32,6 +32,10 @@ export default function Hero() {
         Faites confiance à la précision et à la qualité que seule Bruno Auto peut vous offrir.
 
         Ne perdez pas de temps à immobiliser votre véhicule en carrosserie, nous intervenons sur place dans votre lieu de travail ou domicile. Nos services sont 3 x plus économique, rapide et écologique.
+        Si votre véhicule à subi des impacts de grêle, des coup de portière ou des coup de caddie...
+        Si votre véhicule est en location (LOA/LDD) et que vous devez le restituer... 
+        Si vous souhaitez revendre votre véhicule. 
+        Vous pouvez faire appel à nos services afin de résoudre ces défauts.
         </p>
         <button onClick={handleWhatsApp} className="relative p-[3px]">
           
