@@ -11,7 +11,7 @@ export default function WhoWeAre() {
         </h2>
         <p className="mb-4 leading-relaxed">
           Nous sommes avant tout une équipe de passionnés de l’automobile, dédiée à offrir un service de qualité pour redonner un aspect neuf aux véhicules sans endommager la peinture existante.
-          Spécialistes en techniques non invasives, nous intervenons auprès des professionnels et des particuliers dans l’Hérault et le Gard.
+          Spécialistes en techniques non invasives, nous intervenons auprès des professionnels et des particuliers dans.
           Notre méthode de débosselage sans peinture (DSP) répare bosses et enfoncements sans repeindre, assurant rapidité, coûts réduits et conservation de la peinture d’origine.
           Cette méthode est généralement préférée pour ses nombreux avantages, notamment sa rapidité, son coût réduit et la conservation de la peinture d’origine.
         </p>
