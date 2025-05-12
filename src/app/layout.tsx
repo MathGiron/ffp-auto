@@ -2,7 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
+import GoogleTagManager from "@/components/GoogleTagManager"; // Ajuste o caminho conforme sua estrutura
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,12 +20,11 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Define o fundo global como o tom base escuro (#515353)
   return (
     <html lang="pt-BR">
       <body className={`${inter.className} bg-[#515353]`}>
+        <GoogleTagManager />
         {children}
-        
       </body>
     </html>
   );
