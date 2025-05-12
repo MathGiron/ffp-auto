@@ -2,7 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import GoogleTagManager from "@/components/GoogleTagManager"; // Ajuste o caminho conforme sua estrutura
+import GoogleTagManager from "../components/GoogleTagManager"; // Ajuste o caminho conforme sua estrutura
 
 const inter = Inter({ subsets: ["latin"] });
 
