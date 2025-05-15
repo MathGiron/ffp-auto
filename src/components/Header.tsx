@@ -1,3 +1,4 @@
+// components/Header.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -14,12 +15,14 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Função que abre o WhatsApp
   const handleWhatsApp = () => {
     window.open("https://wa.me/message/Z2OSV4FHUEMUN1", "_blank");
   };
 
+  // Função que copia o telefone para o clipboard
   const copyPhoneNumber = () => {
-    navigator.clipboard.writeText("+33688593845");
+    navigator.clipboard.writeText("+33 6 88 59 38 45");
     alert("Número copiado para a área de transferência!");
   };
 
@@ -39,7 +42,7 @@ export default function Header() {
           className="object-contain"
         />
 
-        {/* Links (somente desktop) */}
+        {/* Links (desktop) */}
         <nav className="hidden md:block">
           <ul className="flex space-x-6 items-center">
             <li>
@@ -72,16 +75,16 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Container para botão WhatsApp e número */}
+        {/* Telefone + botão WhatsApp */}
         <div className="flex items-center space-x-4">
-          {/* Número de telefone com função de copiar */}
+          {/* Número copiado ao clicar */}
           <span
             onClick={copyPhoneNumber}
             className="text-white cursor-pointer transition-colors hover:bg-gradient-to-r hover:from-[#f4d676] hover:to-[#af7837] hover:bg-clip-text hover:text-transparent"
           >
-            +33 6 88 59 3845
+            +33 6 88 59 38 45
           </span>
-          {/* Botão WhatsApp */}
+          {/* Botão que chama o handleWhatsApp */}
           <button
             onClick={handleWhatsApp}
             className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
