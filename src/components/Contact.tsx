@@ -33,7 +33,7 @@ export function ContactMechanicButton() {
             onClick={copyPhoneNumber}
             className="text-white cursor-pointer text-xl transition-colors p-4 hover:bg-gradient-to-r hover:from-[#f4d676] hover:to-[#af7837] hover:bg-clip-text hover:text-transparent"
           >
-            +33 6 88 59 3845
+            +33 6 88 59 38 45
           </span>
       
 
